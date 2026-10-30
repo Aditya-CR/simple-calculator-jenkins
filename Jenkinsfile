@@ -1,6 +1,14 @@
 groovy
 pipeline {
     agent any
+    
+    
+    // Use tools Name configured in Jenkins
+    tools {
+        jdk 'JDK 25'
+        maven 'Maven-3.10'
+    }
+
 
     stages {
         stage('SCM Synchronization') {
