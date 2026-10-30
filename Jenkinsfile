@@ -20,14 +20,14 @@ pipeline {
         stage('Static Verification') {
             steps {
                 echo '🔍 Checking Maven project layout rules...'
-                bat 'mvn validate'
+                sh 'mvn validate'
             }
         }
 
         stage('Compilation & Automated Testing') {
             steps {
                 echo '⚙️ Compiling class layers and verifying test logic stability...'
-                bat 'mvn clean package'
+                sh 'mvn clean package'
             }
             post {
                 always {
